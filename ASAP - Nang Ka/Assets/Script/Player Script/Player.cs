@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public PlayerMoveState MoveState { get; private set; }
 
     public Animator Anim { get; private set; }
+    public PlayerInputHandler InputHandler { get; private set; }  
 
     [SerializeField]
     private PlayerData playerData;
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         Anim = GetComponent<Animator>();
+        InputHandler = GetComponent<PlayerInputHandler>();
 
         StateMachine.Initialize(IdleState);
     }
