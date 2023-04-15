@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    #region State Variables
     public PlayerStateMachine StateMachine { get; private set; }
 
     public PlayerIdleState IdleState { get; private set; }
     public PlayerMoveState MoveState { get; private set; }
 
+    [SerializeField]
+    private PlayerData playerData;
+    #endregion
+
+    #region Component
     public Animator Anim { get; private set; }
     public PlayerInputHandler InputHandler { get; private set; }  
     public Rigidbody2D RB { get; private set; }
+    #endregion
     public Vector2 CurrentVelocity { get; private set; }
-
-    [SerializeField]
-    private PlayerData playerData;
+    public int FacingDirection { get; private set; }
 
     private Vector2 workspace;
 
@@ -32,6 +37,8 @@ public class Player : MonoBehaviour
         Anim = GetComponent<Animator>();
         InputHandler = GetComponent<PlayerInputHandler>();
         RB = GetComponent<Rigidbody2D>();
+
+        FacingDirection = 1;
 
         StateMachine.Initialize(IdleState);
     }
@@ -52,5 +59,19 @@ public class Player : MonoBehaviour
         workspace.Set(velocity, CurrentVelocity.y);
         RB.velocity = workspace;
         CurrentVelocity = workspace;
+    }
+
+    public void FlipChecker(int xInput)
+    {
+        if(xInput != 0 && xInput != FacingDirection)
+        {
+            Flip();
+        }
+    }
+
+    private void Flip()
+    {
+        FacingDirection *= -1;
+        transform.Rotate(0.0f, 180.0f, 0.0f);
     }
 }
