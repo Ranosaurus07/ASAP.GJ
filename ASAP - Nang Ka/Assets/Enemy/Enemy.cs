@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 
     Rigidbody2D rb;
     TouchingDirection touchingDirection;
-
+    public EnemyDetection attackZone;
 
     public enum WalkableDirection{right, left}
 
@@ -61,6 +61,11 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         touchingDirection = GetComponent<TouchingDirection>();
   
+    }
+
+    public void Update()
+    {
+       //
     }
 
 

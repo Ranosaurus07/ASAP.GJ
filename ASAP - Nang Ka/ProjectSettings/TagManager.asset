@@ -13,12 +13,12 @@ TagManager:
   - 
   - Water
   - UI
-  - whatIsGround
-  - Background
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Wall
+  - Enemy
+  - Player
+  - Foreground
+  - EnemyHitbox
   - 
   - 
   - 
@@ -45,6 +45,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 3737792287
+    locked: 0
+  - name: Enemy
+    uniqueID: 3317877765
     locked: 0
   - name: Player
     uniqueID: 2887709883
