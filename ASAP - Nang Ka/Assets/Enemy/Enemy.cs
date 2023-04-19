@@ -8,13 +8,31 @@ public class Enemy : MonoBehaviour
 
     Rigidbody2D rb;
     TouchingDirection touchingDirection;
+    Animator animator;
+
     public EnemyDetection attackZone;
+
 
     public enum WalkableDirection{right, left}
 
     private WalkableDirection _walkDirection;
     private Vector2 walkDirectionVector = Vector2.right;
+   public bool hasTarget
+    {
+        get
+        {
+            return _hasTarget;
+        }
+        private set
+        {
+            _hasTarget = value;
+            animator.SetBool(AnimationStrings.hasTarget, value);
+        }
+    }
+   
 
+    public bool _hasTarget = false;
+    
     public WalkableDirection WalkDirection
     {
         get { return _walkDirection; }
@@ -60,12 +78,14 @@ public class Enemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         touchingDirection = GetComponent<TouchingDirection>();
+        animator = GetComponent<Animator>();
   
     }
 
     public void Update()
     {
-       //
+       hasTarget = attackZone.detectedCollider.Count > 0;
+        
     }
 
 
