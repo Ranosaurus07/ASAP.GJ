@@ -108,6 +108,14 @@ public class Player : MonoBehaviour
 
     #endregion
 
+    #region Other Functions
+    private void AnimationTrigger() => StateMachine.CurrentState.AnimationTrigger();
+
+    private void AnimationFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
+
+
+    #endregion
+
     #region Others
     private void Flip()
     {
