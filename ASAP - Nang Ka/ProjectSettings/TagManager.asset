@@ -55,3 +55,6 @@ TagManager:
   - name: Ground
     uniqueID: 912616041
     locked: 0
+  - name: Smoke
+    uniqueID: 879324183
+    locked: 0
