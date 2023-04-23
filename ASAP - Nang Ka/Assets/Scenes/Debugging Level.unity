@@ -1069,6 +1069,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmokePrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 213978323934991828, guid: ad1ec9248824b7b4994412682f2561bb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2668815189830066439, guid: ad1ec9248824b7b4994412682f2561bb, type: 3}
       propertyPath: m_RootOrder
       value: 1
