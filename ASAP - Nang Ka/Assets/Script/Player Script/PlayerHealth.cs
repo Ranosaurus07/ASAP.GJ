@@ -5,10 +5,13 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] public float startingHealth;
+    [SerializeField] private float breathValue;
+    public SmokeDamage smoke;
     public float currenthealth { get; private set;}
 
     public void Awake()
     {
+        smoke = GetComponent<SmokeDamage>();
         currenthealth = startingHealth;
     }
 
@@ -26,11 +29,8 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void Update()
+    public void addBreath(float _value)
     {
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            takeDamage(5);
-        }
+        currenthealth = Mathf.Clamp(currenthealth + _value, 0, startingHealth); 
     }
 }

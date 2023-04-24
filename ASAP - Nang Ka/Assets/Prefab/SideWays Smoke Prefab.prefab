@@ -4887,7 +4887,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc955d10edb47a4b964ba7b9588b45f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
+  damage: 0.5
+  canBreath: 1
 --- !u!1 &8363502506925969955
 GameObject:
   m_ObjectHideFlags: 0
@@ -4918,5 +4919,5 @@ Transform:
   m_Children:
   - {fileID: 1163602907008399290}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
